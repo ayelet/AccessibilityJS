@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ayelet/AccessibilityJS/issues"
   },
-  "homepage": "https://github.com/ayelet/AccessibilityJS#readme"
+  "homepage": "https://github.com/ayelet/AccessibilityJS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
