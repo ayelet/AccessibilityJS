@@ -8,17 +8,17 @@ const createNewPost = async (req, res) => {
         const page = await browser.newPage()
         await page.goto(url)
         const title = await page.title()
-        const data = await page.evaluate(() => {
-            const article = document.querySelectorAll("#main-content > div > div > div > article p")
-            // const content = Object.entries(article.querySelectorAll('p'))
-            console.log(article)
-            return article
+        const content = await page.evaluate(() => {
+            const contentData = document.querySelector('#main-content > div > div > div > article').querySelectorAll('p')
+            const contentArr = []
+            contentData.forEach( p => contentArr.push(p.innerText))
+            return contentArr.join(' ')
         })
-        console.log(data)
+        console.log(content)
         await browser.close()
         res.status(201).json({
             "title": title,
-            "data": data
+            "content": content
         })
     } catch (e) {
         res.status(500).json(`there is some error... ${e}`)
