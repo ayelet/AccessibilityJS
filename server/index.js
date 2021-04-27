@@ -1,6 +1,5 @@
-const express = require('express');
-const newRoute = require('./routes/newRoutes.routes')
 const express = require("express");
+const newRoute = require("./routes/newRoutes.routes");
 const app = express();
 const port = process.env.PORT || 8000;
 
@@ -8,7 +7,7 @@ const cors = require("cors");
 
 // require("./DB/mongoose");
 
-const newRoute = require("./routes/newRoutes.routes");
+// const newRoute = require("./routes/newRoutes.routes");
 
 app.use(express.json());
 app.use(cors());
