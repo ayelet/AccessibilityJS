@@ -11,7 +11,9 @@ const SearchBar = () => {
     console.log(language);
   };
 
-  const handleClick = () => {};
+  const handleClick = (title, content) => {
+    console.log(`${title}: `);
+  };
 
   return (
     <div>
