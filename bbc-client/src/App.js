@@ -1,12 +1,17 @@
 import React from "react";
 
+
+import Posts from "./components/SearchComponent/SearchBar";
+
 import SearchBar from "./Components/SearchComponent/SearchBar";
 import Activities from "./Components/SearchComponent/Activities";
 import Comments from "./Components//ArticleComponent/Comments";
 
 import "./App.css";
 
-function App() {
+import "./App.css";
+
+export default function App() {
   return (
     <div>
       <div className="landingContainer">
@@ -17,6 +22,7 @@ function App() {
       </div>
       <div className="landingContainer">
         <h1>Latest:</h1>
+
         <Activities />
       </div>
 
@@ -30,8 +36,7 @@ function App() {
         author={"Itai Levi"}
         time={"20 minutos ago"}
       />
+
     </div>
   );
 }
-
-export default App;

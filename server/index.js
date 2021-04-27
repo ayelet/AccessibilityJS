@@ -1,5 +1,6 @@
+const express = require('express');
+const newRoute = require('./routes/newRoutes.routes')
 const express = require("express");
-
 const app = express();
 const port = process.env.PORT || 8000;
 
