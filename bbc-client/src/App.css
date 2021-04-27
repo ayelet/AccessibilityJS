@@ -7,8 +7,12 @@ body {
 .landingContainer {
   background-color: rgb(204, 204, 204);
 
+
   text-align: center;
   font-family: 'Acme', sans-serif;
+
+
+
 
   border: solid 2px black;
   width: 48%;
