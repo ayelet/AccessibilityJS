@@ -12,7 +12,7 @@ const createNewPost = async (req, res) => {
             const contentArr = []
             contentData.forEach( p => contentArr.push(p.innerText))
             const contentStr = contentArr.join(' ')
-            return contentStr.replaceAll('\\/','')
+            return contentStr
         })
         await browser.close()
         if (!content){
