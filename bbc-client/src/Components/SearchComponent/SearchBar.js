@@ -6,7 +6,7 @@ const SearchBar = () => {
 
   const checkUrl = () => {
     const string = webSearch;
-    const check = string.startsWith('https://www.bbc.com');
+    const check = string.startsWith('https://www.bbc.com/');
     console.log(check);
     console.log(language);
   };
