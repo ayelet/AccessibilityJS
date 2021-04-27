@@ -1,8 +1,4 @@
 import React from "react";
-
-
-import Posts from "./components/SearchComponent/SearchBar";
-
 import SearchBar from "./Components/SearchComponent/SearchBar";
 import Activities from "./Components/SearchComponent/Activities";
 import Comments from "./Components//ArticleComponent/Comments";
@@ -36,7 +32,6 @@ export default function App() {
         author={"Itai Levi"}
         time={"20 minutos ago"}
       />
-
     </div>
   );
 }
