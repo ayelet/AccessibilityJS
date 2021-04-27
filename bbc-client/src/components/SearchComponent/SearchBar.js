@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import api from '../../api/api';
+
 
 const SearchBar = () => {
   const [webSearch, setWebSearch] = useState("");
   const [language, setLanguage] = useState("arabic");
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+
+  }, [])
 
   const checkUrl = () => {
     const string = webSearch;
     const check = string.startsWith("https://www.bbc.com/");
-    console.log(check);
-    console.log(language);
+    if (check) {
+      handleClick();
+    }
+    // console.log(check);
+    // console.log(language);
   };
 
-  const handleClick = (title, content) => {
+  const handleClick = async (title, content) => {
+    try {
+      const { data } = await api.post('/newPost', { url: webSearch });
+      setData(data);
+    } catch (err) {
+      console.log(err);
+    }
     console.log(`${title}: `);
   };
 
@@ -43,6 +59,10 @@ const SearchBar = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div>
+        <h1>{data.title}</h1>
+        <h4>{data.content}</h4>   
       </div>
     </div>
   );
