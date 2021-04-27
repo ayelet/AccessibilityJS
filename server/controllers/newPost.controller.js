@@ -11,10 +11,11 @@ const createNewPost = async (req, res) => {
             const contentData = document.querySelector('#main-content > div > div > div > article').querySelectorAll('p')
             const contentArr = []
             contentData.forEach( p => contentArr.push(p.innerText))
-            return contentArr.join(' ')
+            const contentStr = contentArr.join(' ')
+            return contentStr.replaceAll('\\/','')
         })
         await browser.close()
-        if (!contentData || contentArr.length === 0){
+        if (!content){
             res.status(500).json('content not found')
         }
         res.status(201).json({
