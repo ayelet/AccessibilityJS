@@ -3,7 +3,6 @@ const puppeteer = require('puppeteer');
 const createNewPost = async (req, res) => {
     const { url } = req.body;
     try {
-        // document.querySelector("#main-content > div.ssrcss-6gq9s0-Wrap.e42f8510 > div > div.ssrcss-rgov1k-MainColumn.e1sbfw0p0 > article")
         const browser = await puppeteer.launch()
         const page = await browser.newPage()
         await page.goto(url)
@@ -14,8 +13,10 @@ const createNewPost = async (req, res) => {
             contentData.forEach( p => contentArr.push(p.innerText))
             return contentArr.join(' ')
         })
-        console.log(content)
         await browser.close()
+        if (!contentData || contentArr.length === 0){
+            res.status(500).json('content not found')
+        }
         res.status(201).json({
             "title": title,
             "content": content
