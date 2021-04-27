@@ -1,9 +1,9 @@
 const express = require('express');
+const newRoute = require('./routes/newRoutes.routes')
 const app = express();
 const port = process.env.PORT || 8000;
 const cors = require('cors');
-const newRoute = require('./routes/newRoutes.routes')
-
+require('./DB/mongoose')
 app.use(express.json());
 app.use(cors());
 app.use(newRoute);
