@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
-const cors = require('cors');
-const newRoute = require('../routes/newsRoute')
+const cors = require("cors");
+const newRoute = require("../routes/newsRoute");
 
 app.use(express.json());
 app.use(cors());
@@ -10,5 +10,5 @@ app.use(cors());
 app.use(newRoute);
 
 app.listen(port, () => {
-    console.log(`server start at ${port}`);
-})
+  console.log(`server start at ${port}`);
+});

@@ -1,15 +1,22 @@
-import SearchBar from './Components/SearchComponent/SearchBar';
-import React from 'react';
+import SearchBar from "./Components/SearchComponent/SearchBar";
+import Posts from "./Components/SearchComponent/Activities";
+import React from "react";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className='landingContainer'>
-      <div className='wrapper'>
-        <h1>Dialog - Together</h1>
+    <div>
+      <div className="landingContainer">
+        <div className="wrapper">
+          <h1>BBC Science-Environment Translator</h1>
+          <SearchBar />
+        </div>
       </div>
-      <SearchBar />
+      <div className="landingContainer">
+        <h1>Latest:</h1>
+        <Posts />
+      </div>
     </div>
   );
 }
